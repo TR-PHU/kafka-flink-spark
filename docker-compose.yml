@@ -3,6 +3,8 @@ version: "3"
 services:
   zookeeper:
     image: wurstmeister/zookeeper:latest
+    container_name: zookeeper
+    hostname: zookeeper
     networks:
       - bridge
   kafka:
@@ -22,7 +24,8 @@ services:
       - bridge
 
   jobmanager:
-    hostname: flink-jobmanager
+    container_name: jobmanager
+    hostname: jobmanager
     image: flink:latest
     ports:
       - "8081:8081"
@@ -35,7 +38,8 @@ services:
       - bridge
 
   taskmanager:
-    hostname: flink-taskmanager
+    container_name: taskmanager
+    hostname: taskmanager
     image: flink:latest
     depends_on:
       - jobmanager
