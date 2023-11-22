@@ -1,1 +1,1 @@
-# redpanda-flink
+# Kafka Flink
