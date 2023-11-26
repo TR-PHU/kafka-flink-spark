@@ -19,7 +19,7 @@
 package com.my.examples.redpandaFlink;
 
 
-import org.apache.flink.api.common.functions.FlatMapFunction;
+import  org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.api.java.tuple.Tuple2;
@@ -41,10 +41,10 @@ public class DataStreamJob {
 
     final static String inputTopic = "words";
     final static String outputTopic = "words-count";
-    final static String jobTitle = "WordCount1";
+    final static String jobTitle = "WordCount";
 
     public static void main(String[] args) throws Exception {
-        final String bootstrapServers = args.length > 0 ? args[0] : "kafka:9094";
+        final String bootstrapServers = args.length > 0 ? args[0] : "localhost:9094";
 
         // Set up the streaming execution environment
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
